@@ -1,0 +1,95 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 0;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: background 0.15s;
+}
+
+.row:nth-child(7) {
+  border-bottom: none;
+}
+
+.dayName {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 68px;
+  transition: color 0.15s;
+}
+
+.slots {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.slot {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* Today highlight */
+.today {
+  border-bottom-color: rgba(200, 16, 46, 0.15);
+}
+
+.today .dayName {
+  color: var(--color-red);
+}
+
+.today .slot {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.today::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 65%;
+  background: var(--color-red);
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.todayBadge {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-red);
+  background: rgba(200, 16, 46, 0.1);
+  border: 1px solid rgba(200, 16, 46, 0.25);
+  border-radius: 3px;
+  padding: 1px 5px;
+  line-height: 1.4;
+  vertical-align: middle;
+  font-family: inherit;
+}

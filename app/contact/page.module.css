@@ -1,0 +1,735 @@
+.page {
+  padding-top: 76px;
+  min-height: 100vh;
+}
+
+/* ─── Hero ─────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  padding: var(--space-20) var(--container-padding) var(--space-16);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(200, 16, 46, 0.09) 0%,
+    transparent 55%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.heroLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+
+.heroTitleAccent {
+  color: var(--color-red);
+}
+
+.heroSubtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.heroDecoPanel {
+  position: absolute;
+  top: 20px;
+  right: -60px;
+  width: 340px;
+  height: 220px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+  opacity: 0.5;
+  transform: skewY(-5deg);
+  pointer-events: none;
+}
+
+/* ─── Main Section ─────────────────────────────────────── */
+.mainSection {
+  background: var(--bg-secondary);
+  padding: var(--space-12) 0 var(--space-24);
+}
+
+.mainContainer {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+/* ─── Info column ──────────────────────────────────────── */
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  position: sticky;
+  top: calc(76px + var(--space-8));
+}
+
+.infoStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.infoBlock {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.infoBlockHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.infoBlockIcon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-red);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.infoBlockTitle {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+.infoAddress {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.infoMetro {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: var(--space-2);
+}
+
+.infoContacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.infoContactLink {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.infoContactLink:hover {
+  color: var(--color-red);
+}
+
+.hoursGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.hoursRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  gap: var(--space-3);
+}
+
+.hoursDay {
+  color: var(--text-primary);
+  font-weight: 500;
+  flex-shrink: 0;
+  min-width: 80px;
+}
+
+.hoursTime {
+  color: var(--text-muted);
+  text-align: right;
+  font-size: 0.78rem;
+}
+
+/* Map */
+.mapPlaceholder {
+  position: relative;
+  height: 180px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  filter: grayscale(30%) contrast(1.05);
+}
+
+.mapOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(18, 15, 13, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.mapInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.79rem;
+  color: var(--text-secondary);
+  min-width: 0;
+}
+
+.mapInfo span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mapInfo svg {
+  flex-shrink: 0;
+  color: var(--color-red);
+}
+
+.mapLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-red);
+  text-decoration: none;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: opacity var(--transition-fast);
+}
+
+.mapLink:hover {
+  opacity: 0.75;
+}
+
+/* ─── Form / Benefits column ───────────────────────────── */
+.formCol {
+  /* no position sticky — main content */
+}
+
+.formCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem, 4vw, 3rem);
+}
+
+/* ─── Benefits block ────────────────────────────────────── */
+.benefitsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.benefitsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.benefitsEyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-red);
+  margin: 0;
+}
+
+.benefitsTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.benefitsIntro {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 520px;
+  margin: 0;
+}
+
+/* Benefits grid */
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.benefitCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: border-color var(--transition-fast), transform var(--transition-base);
+}
+
+.benefitCard:hover {
+  border-color: var(--color-red-border);
+  transform: translateY(-2px);
+}
+
+.benefitIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(200, 16, 46, 0.08);
+  color: var(--color-red);
+  border: 1px solid rgba(200, 16, 46, 0.12);
+}
+
+.benefitTitle {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2);
+  line-height: 1.3;
+}
+
+.benefitDesc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Map */
+.benefitsMap {
+  position: relative;
+  height: 200px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.benefitsMapIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  filter: grayscale(30%) contrast(1.05);
+}
+
+.benefitsMapOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(18, 15, 13, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.benefitsMapInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.benefitsMapInfo span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.benefitsMapInfo svg {
+  flex-shrink: 0;
+  color: var(--color-red);
+}
+
+.benefitsMapLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-red);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast);
+  white-space: nowrap;
+}
+
+.benefitsMapLink:hover {
+  opacity: 0.75;
+}
+
+/* Contact strip */
+.benefitsContact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-6) var(--space-8);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  border-left: 3px solid var(--color-red);
+}
+
+.benefitsContactItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.benefitsContactLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+.benefitsContactValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.benefitsContactValue:hover {
+  color: var(--color-red);
+}
+
+.benefitsContactDivider {
+  width: 1px;
+  height: 36px;
+  background: var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.formHeader {
+  margin-bottom: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.formSubtext {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.formLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.required {
+  color: var(--color-red);
+}
+
+.formInput,
+.formSelect,
+.formTextarea {
+  padding: 0.75rem var(--space-4);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+  width: 100%;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: var(--text-muted);
+}
+
+.formInput:focus,
+.formSelect:focus,
+.formTextarea:focus {
+  border-color: var(--color-red);
+  box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.12);
+}
+
+.formSelect {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236a6460' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.formSelect option {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.6;
+}
+
+.formFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding-top: var(--space-3);
+}
+
+.formNote {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.2rem;
+  background: var(--color-red);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.submitButton:hover {
+  background: var(--color-red-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-red);
+}
+
+/* Success */
+.successBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-5);
+  padding: var(--space-12) var(--space-8);
+}
+
+.successIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 180, 80, 0.15);
+  border: 1px solid rgba(0, 180, 80, 0.3);
+  font-size: 1.6rem;
+  color: #4caf7c;
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.successText {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 420px;
+}
+
+.successReset {
+  padding: 0.75rem 1.8rem;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.successReset:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .mainContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .infoCol {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .infoStack {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mapPlaceholder {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .infoCol {
+    grid-template-columns: 1fr;
+  }
+
+  .infoStack {
+    grid-template-columns: 1fr;
+  }
+
+  .formFooter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefitsContact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-5);
+  }
+
+  .benefitsContactDivider {
+    width: 100%;
+    height: 1px;
+  }
+}

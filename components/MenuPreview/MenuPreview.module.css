@@ -1,0 +1,226 @@
+.section {
+  padding: var(--space-24) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative offset block */
+.decorBlock {
+  position: absolute;
+  top: 50%;
+  left: -80px;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 420px;
+  background: var(--color-red-dim);
+  border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Title row */
+.titleRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--space-12);
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 0.65rem 1.4rem;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast), border-color var(--transition-fast),
+    gap var(--transition-fast);
+  white-space: nowrap;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.ctaLink:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-red-border);
+}
+
+.ctaLink:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+.ctaArrow {
+  display: inline-block;
+  transition: transform var(--transition-fast);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  align-items: start;
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform var(--transition-base), box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-red-border);
+}
+
+/* Offset every other card down */
+.cardOffset {
+  margin-top: var(--space-8);
+}
+
+/* Image */
+.cardImageWrap {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.cardImage {
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .cardImage {
+  transform: scale(1.08);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.4) 0%,
+    transparent 60%
+  );
+}
+
+.cardIcon {
+  position: absolute;
+  bottom: var(--space-3);
+  left: var(--space-4);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+  line-height: 1;
+}
+
+/* Content */
+.cardContent {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.cardName {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cardCount {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-red);
+  background: var(--color-red-dim);
+  padding: 2px var(--space-2);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.cardDesc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.cardArrow {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: 1rem;
+  color: var(--color-red);
+  transform: translateX(0);
+  transition: transform var(--transition-fast);
+  align-self: flex-end;
+}
+
+.card:hover .cardArrow {
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+  }
+
+  .cardOffset {
+    margin-top: 0;
+  }
+
+  .grid .card:nth-child(odd) {
+    margin-top: var(--space-6);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid .card:nth-child(odd) {
+    margin-top: 0;
+  }
+
+  .titleRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .decorBlock {
+    display: none;
+  }
+}
