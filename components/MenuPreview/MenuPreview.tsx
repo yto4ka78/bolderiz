@@ -3,7 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./MenuPreview.module.css";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
-import { BowlIcon, SparkleIcon, NoodleIcon, DiamondIcon } from "@/components/Icons/Icons";
+import {
+  BowlIcon,
+  SparkleIcon,
+  NoodleIcon,
+  DiamondIcon,
+} from "@/components/Icons/Icons";
 
 const PREVIEW_CATEGORIES: {
   name: string;
@@ -16,28 +21,28 @@ const PREVIEW_CATEGORIES: {
     name: "Entrées",
     icon: <BowlIcon size={20} />,
     description: "Nems au poulet, raviolis vapeur, brioche au porc",
-    image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=85",
+    image: "/main-fisrt-plate.png",
     count: 2,
   },
   {
     name: "Plats",
     icon: <SparkleIcon size={20} />,
     description: "Canard laqué, mapo tofu, bœuf au piment",
-    image: "https://images.unsplash.com/photo-1611599537845-1c7aca0091c0?auto=format&fit=crop&w=600&q=85",
+    image: "/main-plate.jpeg",
     count: 3,
   },
   {
     name: "Accompagnements",
     icon: <NoodleIcon size={20} />,
     description: "Bo Bun, raviolis porc & chou, brioche vapeur",
-    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=85",
+    image: "/main-accompagnements.jpeg",
     count: 3,
   },
   {
     name: "Desserts",
     icon: <DiamondIcon size={20} />,
     description: "Litchi au sirop, perle de coco, mochis glacés",
-    image: "https://images.unsplash.com/photo-1567206563114-c179706a56e9?auto=format&fit=crop&w=600&q=85",
+    image: "/main-desert.jpeg",
     count: 4,
   },
 ];
@@ -57,7 +62,9 @@ export default function MenuPreview() {
           />
           <Link href="/menu" className={styles.ctaLink}>
             <span>Voir la carte complète</span>
-            <span className={styles.ctaArrow} aria-hidden="true">→</span>
+            <span className={styles.ctaArrow} aria-hidden="true">
+              →
+            </span>
           </Link>
         </div>
 
@@ -77,7 +84,9 @@ export default function MenuPreview() {
                   sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 280px"
                 />
                 <div className={styles.cardOverlay} />
-                <span className={styles.cardIcon} aria-hidden="true">{cat.icon}</span>
+                <span className={styles.cardIcon} aria-hidden="true">
+                  {cat.icon}
+                </span>
               </div>
               <div className={styles.cardContent}>
                 <div className={styles.cardHeader}>
@@ -85,7 +94,9 @@ export default function MenuPreview() {
                   <span className={styles.cardCount}>{cat.count} plats</span>
                 </div>
                 <p className={styles.cardDesc}>{cat.description}</p>
-                <span className={styles.cardArrow} aria-hidden="true">→</span>
+                <span className={styles.cardArrow} aria-hidden="true">
+                  →
+                </span>
               </div>
             </Link>
           ))}
