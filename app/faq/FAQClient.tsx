@@ -99,31 +99,31 @@ export default function FAQClient() {
               <h3 className={styles.sidebarHoursTitle}>Nos horaires</h3>
               <div className={styles.sidebarHoursItem}>
                 <span>Lundi</span>
-                <span>11h30–15h00 &amp; 17h00–21h30</span>
+                <span>11h30 - 21h30</span>
               </div>
               <div className={styles.sidebarHoursItem}>
                 <span>Mardi</span>
-                <span>11h00–21h30</span>
+                <span>11h30 - 21h30</span>
               </div>
               <div className={styles.sidebarHoursItem}>
                 <span>Mercredi</span>
-                <span>11h30–21h30</span>
+                <span>11h30 - 21h30</span>
               </div>
               <div className={styles.sidebarHoursItem}>
                 <span>Jeudi</span>
-                <span>11h00–15h00 &amp; 17h00–21h30</span>
+                <span>11h30 - 21h30</span>
               </div>
               <div className={styles.sidebarHoursItem}>
                 <span>Vendredi</span>
-                <span>11h30–15h00 &amp; 17h00–21h30</span>
+                <span>11h30 - 21h30</span>
               </div>
               <div className={styles.sidebarHoursItem}>
                 <span>Samedi</span>
-                <span>11h30–21h30</span>
+                <span>11h30 - 21h30</span>
               </div>
               <div className={styles.sidebarHoursItem}>
                 <span>Dimanche</span>
-                <span>11h30–21h30</span>
+                <span>11h30 - 21h30</span>
               </div>
             </div>
           </aside>

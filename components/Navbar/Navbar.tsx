@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
 
@@ -9,7 +10,6 @@ const NAV_LINKS = [
   { href: "/", label: "Accueil" },
   { href: "/menu", label: "Menu" },
   { href: "/about", label: "À propos" },
-  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -38,7 +38,16 @@ export default function Navbar() {
       <nav className={styles.nav} aria-label="Navigation principale">
         {/* Logo */}
         <Link href="/" className={styles.logo} aria-label="Bol de riz — Accueil">
-          <span className={styles.logoIcon} aria-hidden="true">龍</span>
+          <span className={styles.logoIcon} aria-hidden="true">
+            <Image
+              src="/logo.png"
+              alt=""
+              width={48}
+              height={48}
+              className={styles.logoIconImage}
+              priority
+            />
+          </span>
           <span className={styles.logoText}>
             <span className={styles.logoMain}>Bol</span>
             <span className={styles.logoSub}>de riz</span>
@@ -62,7 +71,7 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <Link href="/contact" className={styles.ctaButton}>
-          Réserver
+          NOUS CONTACER
         </Link>
 
         {/* Hamburger */}

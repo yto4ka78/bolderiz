@@ -195,11 +195,6 @@
   border-color: var(--color-red-border);
 }
 
-/* Stagger every 3rd card */
-.itemsGrid .menuCard:nth-child(3n) {
-  margin-top: var(--space-6);
-}
-
 .menuCardImage {
   position: relative;
   height: 200px;
@@ -286,10 +281,24 @@
 
 .drinkRow {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: var(--space-3);
   padding: var(--space-4) 0;
   border-bottom: 1px solid var(--border-subtle);
+}
+
+.drinkThumb {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--border-subtle);
+}
+
+.drinkThumbImg {
+  object-fit: cover;
 }
 
 .drinkRow:nth-last-child(-n+2) {
@@ -371,10 +380,6 @@
 @media (max-width: 1024px) {
   .itemsGrid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .itemsGrid .menuCard:nth-child(3n) {
-    margin-top: 0;
   }
 }
 

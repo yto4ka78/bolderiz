@@ -58,7 +58,7 @@ export default function MenuPreview() {
           <SectionTitle
             eyebrow="Notre carte"
             title={"Découvrez\nnos saveurs"}
-            subtitle="Plus de 60 plats préparés chaque jour avec des produits sélectionnés."
+            subtitle="Une carte d'environ 15 plats, préparés avec des produits soigneusement sélectionnés."
           />
           <Link href="/menu" className={styles.ctaLink}>
             <span>Voir la carte complète</span>

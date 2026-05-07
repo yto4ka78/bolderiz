@@ -1,15 +1,15 @@
 import Link from "next/link";
 import styles from "./ContactPreview.module.css";
 import { RESTAURANT } from "@/lib/mockData";
-import { ClockIcon, MapPinIcon, MailIcon } from "@/components/Icons/Icons";
+import { ClockIcon, MapPinIcon } from "@/components/Icons/Icons";
 
 const HOURS = [
-  { day: "Lundi", slots: ["11h30 – 15h00", "17h00 – 21h30"] },
-  { day: "Mardi", slots: ["11h00 – 21h30"] },
-  { day: "Mercredi", slots: ["11h30 – 21h30"] },
-  { day: "Jeudi", slots: ["11h00 – 15h00", "17h00 – 21h30"] },
-  { day: "Vendredi", slots: ["11h30 – 15h00", "17h00 – 21h30"] },
-  { day: "Sam–Dim", slots: ["11h30 – 21h30"] },
+  { day: "Lundi", slots: ["11h30 - 21h30"] },
+  { day: "Mardi", slots: ["11h30 - 21h30"] },
+  { day: "Mercredi", slots: ["11h30 - 21h30"] },
+  { day: "Jeudi", slots: ["11h30 - 21h30"] },
+  { day: "Vendredi", slots: ["11h30 - 21h30"] },
+  { day: "Sam–Dim", slots: ["11h30 - 21h30"] },
 ];
 
 export default function ContactPreview() {
@@ -28,7 +28,7 @@ export default function ContactPreview() {
             </p>
             <div className={styles.ctaRow}>
               <Link href="/contact" className={styles.ctaPrimary}>
-                Réserver en ligne
+                NOUS CONTACER
               </Link>
               <a href={`tel:${RESTAURANT.phone.replace(/\s/g, "")}`} className={styles.ctaSecondary}>
                 {RESTAURANT.phone}
@@ -76,12 +76,8 @@ export default function ContactPreview() {
             {/* Contact */}
             <div className={styles.panelSection}>
               <h3 className={styles.panelTitle}>
-                <span className={styles.panelIcon}><MailIcon size={16} /></span>
                 Contact
               </h3>
-              <a href={`mailto:${RESTAURANT.email}`} className={styles.panelLink}>
-                {RESTAURANT.email}
-              </a>
               <a href={`tel:${RESTAURANT.phone.replace(/\s/g, "")}`} className={styles.panelLink}>
                 {RESTAURANT.phone}
               </a>

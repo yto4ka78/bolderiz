@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Footer.module.css";
 import { RESTAURANT } from "@/lib/mockData";
 
@@ -12,12 +13,21 @@ export default function Footer() {
           {/* Brand Column */}
           <div className={styles.brandCol}>
             <Link href="/" className={styles.logo} aria-label="Retour à l'accueil">
-              <span className={styles.logoIcon} aria-hidden="true">龍</span>
+              <span className={styles.logoIcon} aria-hidden="true">
+                <Image
+                  src="/logo.png"
+                  alt=""
+                  width={36}
+                  height={36}
+                  className={styles.logoIconImage}
+                  priority
+                />
+              </span>
               <span className={styles.logoText}>Bol de riz</span>
             </Link>
             <p className={styles.tagline}>{RESTAURANT.tagline}</p>
             <p className={styles.founded}>
-              Fondé en {RESTAURANT.founded} · Cuisine authentique depuis plus de 25 ans
+              25+ ans d&apos;expérience en cuisine · Recettes familiales authentiques
             </p>
           </div>
 
@@ -28,7 +38,6 @@ export default function Footer() {
               <li><Link href="/" className={styles.footerLink}>Accueil</Link></li>
               <li><Link href="/menu" className={styles.footerLink}>Notre carte</Link></li>
               <li><Link href="/about" className={styles.footerLink}>À propos</Link></li>
-              <li><Link href="/faq" className={styles.footerLink}>FAQ</Link></li>
               <li><Link href="/contact" className={styles.footerLink}>Contact & Réservations</Link></li>
             </ul>
           </nav>
@@ -39,31 +48,31 @@ export default function Footer() {
             <ul className={styles.hoursList} role="list">
               <li className={styles.hoursItem}>
                 <span className={styles.hoursDay}>Lundi</span>
-                <span className={styles.hoursTime}>11h30–15h00 & 17h00–21h30</span>
+                <span className={styles.hoursTime}>11h30 - 21h30</span>
               </li>
               <li className={styles.hoursItem}>
                 <span className={styles.hoursDay}>Mardi</span>
-                <span className={styles.hoursTime}>11h00–21h30</span>
+                <span className={styles.hoursTime}>11h30 - 21h30</span>
               </li>
               <li className={styles.hoursItem}>
                 <span className={styles.hoursDay}>Mercredi</span>
-                <span className={styles.hoursTime}>11h30–21h30</span>
+                <span className={styles.hoursTime}>11h30 - 21h30</span>
               </li>
               <li className={styles.hoursItem}>
                 <span className={styles.hoursDay}>Jeudi</span>
-                <span className={styles.hoursTime}>11h00–15h00 & 17h00–21h30</span>
+                <span className={styles.hoursTime}>11h30 - 21h30</span>
               </li>
               <li className={styles.hoursItem}>
                 <span className={styles.hoursDay}>Vendredi</span>
-                <span className={styles.hoursTime}>11h30–15h00 & 17h00–21h30</span>
+                <span className={styles.hoursTime}>11h30 - 21h30</span>
               </li>
               <li className={styles.hoursItem}>
                 <span className={styles.hoursDay}>Samedi</span>
-                <span className={styles.hoursTime}>11h30–21h30</span>
+                <span className={styles.hoursTime}>11h30 - 21h30</span>
               </li>
               <li className={styles.hoursItem}>
                 <span className={styles.hoursDay}>Dimanche</span>
-                <span className={styles.hoursTime}>11h30–21h30</span>
+                <span className={styles.hoursTime}>11h30 - 21h30</span>
               </li>
             </ul>
             <div className={styles.statusBadge}>
@@ -82,9 +91,6 @@ export default function Footer() {
             <div className={styles.contactLinks}>
               <a href={`tel:${RESTAURANT.phone.replace(/\s/g, "")}`} className={styles.contactLink}>
                 <span aria-hidden="true">↗</span> {RESTAURANT.phone}
-              </a>
-              <a href={`mailto:${RESTAURANT.email}`} className={styles.contactLink}>
-                <span aria-hidden="true">↗</span> {RESTAURANT.email}
               </a>
             </div>
           </div>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import ContactPreview from "@/components/ContactPreview/ContactPreview";
-import { LeafIcon, BookIcon, FlameIcon, UsersIcon, ChefIcon } from "@/components/Icons/Icons";
+import { LeafIcon, BookIcon, FlameIcon, UsersIcon } from "@/components/Icons/Icons";
 
 export const metadata: Metadata = {
   title: "À Propos",
@@ -46,7 +46,7 @@ export default function AboutPage() {
       <section className={styles.hero}>
         <div className={styles.heroBg} aria-hidden="true">
           <Image
-            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80"
+            src="/photo-resto-outside-streer.webp"
             alt=""
             fill
             className={styles.heroBgImg}
@@ -112,8 +112,8 @@ export default function AboutPage() {
                 />
               </div>
               <div className={styles.storyYearBadge}>
-                <span className={styles.storyYear}>1998</span>
-                <span className={styles.storyYearSub}>Fondé à Orléans</span>
+                <span className={styles.storyYear}>À partir de 1998</span>
+                <span className={styles.storyYearSub}>Savoir-faire familial</span>
               </div>
             </div>
           </div>
@@ -141,63 +141,6 @@ export default function AboutPage() {
                 <p className={styles.valueDesc}>{value.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team / Kitchen section */}
-      <section className={styles.teamSection}>
-        <div className={styles.teamSectionInner}>
-          <div className={styles.teamLayout}>
-            <div className={styles.teamImageBlock} aria-hidden="true">
-              <div className={styles.teamMainImage}>
-                <Image
-                  src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
-                  alt="Cuisine au wok"
-                  fill
-                  className={styles.imgFill}
-                  sizes="(max-width: 900px) 100vw, 55vw"
-                />
-                <div className={styles.teamImgOverlay} />
-              </div>
-              <div className={styles.teamFloatCard}>
-                <span className={styles.teamFloatEmoji} aria-hidden="true">
-                  <ChefIcon size={28} />
-                </span>
-                <div>
-                  <p className={styles.teamFloatName}>Chen Mingzhi</p>
-                  <p className={styles.teamFloatRole}>Chef de cuisine</p>
-                </div>
-              </div>
-            </div>
-            <div className={styles.teamText}>
-              <SectionTitle
-                eyebrow="Notre équipe"
-                title={"La cuisine\nau cœur de tout"}
-              />
-              <div className={styles.teamBody}>
-                <p>
-                  Notre brigade est composée de 6 cuisiniers, dont certains travaillent à Bol de riz depuis plus de 15 ans. Sous la direction de Mingzhi, l&apos;équipe allie rigueur technique et passion sincère pour la cuisine chinoise.
-                </p>
-                <p>
-                  Chaque service est l&apos;occasion de perfectionner un geste, d&apos;affiner une sauce, d&apos;améliorer une présentation. La cuisine n&apos;est jamais figée — elle évolue avec les saisons et les découvertes.
-                </p>
-              </div>
-              <div className={styles.teamStats}>
-                <div className={styles.teamStat}>
-                  <span className={styles.teamStatVal}>6</span>
-                  <span className={styles.teamStatLabel}>Cuisiniers passionnés</span>
-                </div>
-                <div className={styles.teamStat}>
-                  <span className={styles.teamStatVal}>2</span>
-                  <span className={styles.teamStatLabel}>Générations familiales</span>
-                </div>
-                <div className={styles.teamStat}>
-                  <span className={styles.teamStatVal}>25+</span>
-                  <span className={styles.teamStatLabel}>Années d&apos;histoire</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

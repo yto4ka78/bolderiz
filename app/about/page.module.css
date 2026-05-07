@@ -308,127 +308,6 @@
   padding: 0 var(--space-5) var(--space-1) 0;
 }
 
-/* ─── Team ────────────────────────────────────────────── */
-.teamSection {
-  padding: var(--space-24) 0;
-  background: var(--bg-secondary);
-}
-
-.teamSectionInner {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
-}
-
-.teamLayout {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: clamp(3rem, 6vw, 7rem);
-  align-items: center;
-}
-
-.teamImageBlock {
-  position: relative;
-}
-
-.teamMainImage {
-  position: relative;
-  height: 480px;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  clip-path: polygon(0 0, 90% 0, 100% 8%, 100% 100%, 10% 100%, 0 92%);
-  box-shadow: var(--shadow-lg);
-}
-
-.teamImgOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top right,
-    rgba(200, 16, 46, 0.12) 0%,
-    transparent 60%
-  );
-}
-
-.teamFloatCard {
-  position: absolute;
-  bottom: -20px;
-  right: -16px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: var(--space-4) var(--space-5);
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  box-shadow: var(--shadow-md);
-}
-
-.teamFloatEmoji {
-  display: flex;
-  align-items: center;
-  color: var(--color-red);
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-.teamFloatName {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.teamFloatRole {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-top: 2px;
-}
-
-.teamText {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-7);
-}
-
-.teamBody {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-}
-
-.teamBody p {
-  font-size: 0.93rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-}
-
-.teamStats {
-  display: flex;
-  gap: var(--space-8);
-  padding: var(--space-6) 0;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.teamStat {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.teamStatVal {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1;
-}
-
-.teamStatLabel {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
 /* Responsive */
 @media (max-width: 1100px) {
   .valuesGrid {
@@ -443,20 +322,13 @@
 }
 
 @media (max-width: 900px) {
-  .storyLayout,
-  .teamLayout {
+  .storyLayout {
     grid-template-columns: 1fr;
   }
   .storyImages {
     height: 360px;
   }
-  .teamMainImage {
-    height: 360px;
-  }
   .storyYearBadge {
-    right: 8px;
-  }
-  .teamFloatCard {
     right: 8px;
   }
 }

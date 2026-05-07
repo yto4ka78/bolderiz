@@ -9,7 +9,6 @@ import { MapPinIcon, PhoneIcon, ClockIcon } from "@/components/Icons/Icons";
 export default function ContactClient() {
   const [formState, setFormState] = useState({
     name: "",
-    email: "",
     phone: "",
     date: "",
     guests: "",
@@ -65,18 +64,15 @@ export default function ContactClient() {
                 </address>
               </div>
 
-              {/* Phone & Email */}
+              {/* Phone */}
               <div className={styles.infoBlock}>
                 <div className={styles.infoBlockHeader}>
                   <span className={styles.infoBlockIcon}><PhoneIcon size={16} /></span>
-                  <h2 className={styles.infoBlockTitle}>Téléphone &amp; Email</h2>
+                  <h2 className={styles.infoBlockTitle}>Téléphone</h2>
                 </div>
                 <div className={styles.infoContacts}>
                   <a href={`tel:${RESTAURANT.phone.replace(/\s/g, "")}`} className={styles.infoContactLink}>
                     {RESTAURANT.phone}
-                  </a>
-                  <a href={`mailto:${RESTAURANT.email}`} className={styles.infoContactLink}>
-                    {RESTAURANT.email}
                   </a>
                 </div>
               </div>
@@ -89,13 +85,13 @@ export default function ContactClient() {
                 </div>
                 <div className={styles.hoursGrid}>
                   {[
-                    { day: "Lundi", time: "11h30–15h00 · 17h00–21h30" },
-                    { day: "Mardi", time: "11h00–21h30" },
-                    { day: "Mercredi", time: "11h30–21h30" },
-                    { day: "Jeudi", time: "11h00–15h00 · 17h00–21h30" },
-                    { day: "Vendredi", time: "11h30–15h00 · 17h00–21h30" },
-                    { day: "Samedi", time: "11h30–21h30" },
-                    { day: "Dimanche", time: "11h30–21h30" },
+                    { day: "Lundi", time: "11h30 - 21h30" },
+                    { day: "Mardi", time: "11h30 - 21h30" },
+                    { day: "Mercredi", time: "11h30 - 21h30" },
+                    { day: "Jeudi", time: "11h30 - 21h30" },
+                    { day: "Vendredi", time: "11h30 - 21h30" },
+                    { day: "Samedi", time: "11h30 - 21h30" },
+                    { day: "Dimanche", time: "11h30 - 21h30" },
                   ].map((h) => (
                     <div key={h.day} className={styles.hoursRow}>
                       <span className={styles.hoursDay}>{h.day}</span>
@@ -223,13 +219,6 @@ export default function ContactClient() {
                   <span className={styles.benefitsContactLabel}>Réservation</span>
                   <a href={`tel:${RESTAURANT.phone.replace(/\s/g, "")}`} className={styles.benefitsContactValue}>
                     {RESTAURANT.phone}
-                  </a>
-                </div>
-                <div className={styles.benefitsContactDivider} aria-hidden="true" />
-                <div className={styles.benefitsContactItem}>
-                  <span className={styles.benefitsContactLabel}>Email</span>
-                  <a href={`mailto:${RESTAURANT.email}`} className={styles.benefitsContactValue}>
-                    {RESTAURANT.email}
                   </a>
                 </div>
               </div>

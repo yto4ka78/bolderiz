@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Découvrez la carte de Bol de riz à Orléans : nems, canard laqué, bœuf au piment, mapo tofu, mochi et bien plus. Cuisine chinoise authentique et généreuse.",
 };
 
-const CATEGORIES = ["Entrées", "Plats", "Accompagnements", "Desserts", "Boissons"];
+const CATEGORIES = ["Entrées", "Plats", "Accompagnements", "Desserts", "Vins", "Boissons"];
 
 export default function MenuPage() {
   return (
@@ -58,7 +58,7 @@ export default function MenuPage() {
           const items = MENU_ITEMS.filter((item) => item.category === category);
           if (!items.length) return null;
 
-          const isDrinks = category === "Boissons";
+          const isListCategory = category === "Boissons" || category === "Vins";
 
           return (
             <section
@@ -70,16 +70,31 @@ export default function MenuPage() {
                 {/* Decorative offset title block */}
                 <div className={styles.categoryTitleBlock}>
                   <SectionTitle
-                    eyebrow={isDrinks ? `${items.length} boissons` : `${items.length} plats`}
+                    eyebrow={
+                      isListCategory
+                        ? `${items.length} ${category.toLowerCase()}`
+                        : `${items.length} plats`
+                    }
                     title={category}
                   />
                 </div>
 
-                {isDrinks ? (
-                  /* Drinks list — no photos */
+                {isListCategory ? (
+                  /* Drinks list — optional thumbnails for items with images */
                   <ul className={styles.drinksList} role="list">
                     {items.map((item) => (
                       <li key={item.id} className={styles.drinkRow}>
+                        {item.image && (
+                          <div className={styles.drinkThumb}>
+                            <Image
+                              src={item.image}
+                              alt={item.name}
+                              fill
+                              className={styles.drinkThumbImg}
+                              sizes="72px"
+                            />
+                          </div>
+                        )}
                         <div className={styles.drinkLeft}>
                           <span className={styles.drinkName}>{item.name}</span>
                           <span className={styles.drinkDesc}>{item.description}</span>

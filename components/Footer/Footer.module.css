@@ -50,9 +50,17 @@
 }
 
 .logoIcon {
-  font-size: 1.6rem;
-  color: var(--color-red);
-  font-family: serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.logoIconImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .logoText {

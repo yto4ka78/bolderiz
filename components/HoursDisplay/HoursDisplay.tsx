@@ -4,13 +4,13 @@ import { useMemo } from "react";
 import styles from "./HoursDisplay.module.css";
 
 const SCHEDULE = [
-  { day: "Lundi",    jsDay: 1, slots: ["11h30 – 15h00", "17h00 – 21h30"] },
-  { day: "Mardi",    jsDay: 2, slots: ["11h00 – 21h30"] },
-  { day: "Mercredi", jsDay: 3, slots: ["11h30 – 21h30"] },
-  { day: "Jeudi",    jsDay: 4, slots: ["11h00 – 15h00", "17h00 – 21h30"] },
-  { day: "Vendredi", jsDay: 5, slots: ["11h30 – 15h00", "17h00 – 21h30"] },
-  { day: "Samedi",   jsDay: 6, slots: ["11h30 – 21h30"] },
-  { day: "Dimanche", jsDay: 0, slots: ["11h30 – 21h30"] },
+  { day: "Lundi", jsDay: 1, slots: ["11h30 - 21h30"] },
+  { day: "Mardi", jsDay: 2, slots: ["11h30 - 21h30"] },
+  { day: "Mercredi", jsDay: 3, slots: ["11h30 - 21h30"] },
+  { day: "Jeudi", jsDay: 4, slots: ["11h30 - 21h30"] },
+  { day: "Vendredi", jsDay: 5, slots: ["11h30 - 21h30"] },
+  { day: "Samedi", jsDay: 6, slots: ["11h30 - 21h30"] },
+  { day: "Dimanche", jsDay: 0, slots: ["11h30 - 21h30"] },
 ];
 
 export default function HoursDisplay() {

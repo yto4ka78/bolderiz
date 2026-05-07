@@ -4,11 +4,10 @@ export const RESTAURANT = {
   address: "46 Rue Jeanne d'Arc, 45000 Orléans",
   metro: "Arrêt République / Cathédrale",
   phone: "02 38 43 80 44",
-  email: "contact@bolderiz.fr",
   hours: {
     weekdays:
-      "Lun : 11h30–15h00 & 17h00–21h30 · Mar : 11h00–21h30 · Mer : 11h30–21h30 · Jeu : 11h00–15h00 & 17h00–21h30 · Ven : 11h30–15h00 & 17h00–21h30",
-    weekend: "Sam : 11h30–21h30 · Dim : 11h30–21h30",
+      "Lun : 11h30 - 21h30 · Mar : 11h30 - 21h30 · Mer : 11h30 - 21h30 · Jeu : 11h30 - 21h30 · Ven : 11h30 - 21h30",
+    weekend: "Sam : 11h30 - 21h30 · Dim : 11h30 - 21h30",
   },
   founded: "1998",
   rating: 4.6,
@@ -120,6 +119,30 @@ export const MENU_ITEMS: MenuItem[] = [
   { id: 21, name: "Aloe vera 50 cl", description: "Boisson à base de gel d'aloe vera.", price: "4,00 €", category: "Boissons" },
   { id: 22, name: "Tsingtao 33 cl", description: "Bière blonde chinoise, légère et rafraîchissante.", price: "3,00 €", category: "Boissons" },
   { id: 23, name: "Asahi 33 cl", description: "Bière japonaise premium, sèche et rafraîchissante.", price: "3,50 €", category: "Boissons" },
+  {
+    id: 24,
+    name: "Vin au pichet (rouge ou rosé)",
+    description: "Servi au verre ou en pichet 0,5 L.",
+    price: "3,00 € (verre) / 6,00 € (0,5 L)",
+    category: "Vins",
+    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: 25,
+    name: "Chinon rouge 75 cl",
+    description: "Vin rouge servi en bouteille 75 cl.",
+    price: "20,00 €",
+    category: "Vins",
+    image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: 26,
+    name: "Chinon rosé 75 cl",
+    description: "Vin rosé servi en bouteille 75 cl.",
+    price: "20,00 €",
+    category: "Vins",
+    image: "https://images.unsplash.com/photo-1771583102699-f79a6c6d08c8?auto=format&fit=crop&w=600&q=80",
+  },
   // Desserts
   {
     id: 9,

@@ -61,7 +61,7 @@ export default function Hero() {
               Découvrir la carte
             </Link>
             <Link href="/contact" className={styles.ctaSecondary}>
-              Réserver une table
+              NOUS CONTACTER
             </Link>
           </div>
         </div>
@@ -78,10 +78,8 @@ export default function Hero() {
             />
             <div className={styles.cardOverlay} />
             <div className={styles.cardLabel}>
-              <span className={styles.cardLabelText}>Dim sum maison</span>
-              <span className={styles.cardLabelSub}>
-                Cuit à la vapeur · Servi midi &amp; soir
-              </span>
+              <span className={styles.cardLabelText}>Raviolis de crevette</span>
+              <span className={styles.cardLabelSub}>Cuit à la vapeur</span>
             </div>
           </div>
 
@@ -91,7 +89,9 @@ export default function Hero() {
               {RESTAURANT.rating}
             </span>
             <div className={styles.floatingPanelInfo}>
-              <span className={styles.floatingPanelLabel}>Note clients</span>
+              <span className={styles.floatingPanelLabel}>
+                Note clients du restaurant
+              </span>
               <span className={styles.floatingPanelReviews}>
                 {RESTAURANT.reviews} avis
               </span>
