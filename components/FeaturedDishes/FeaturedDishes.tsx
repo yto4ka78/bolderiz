@@ -6,27 +6,27 @@ import SectionTitle from "@/components/SectionTitle/SectionTitle";
 const FEATURED = [
   {
     id: 1,
-    name: "Bœuf bouilli au piment et poivre",
-    description: "Tranches de bœuf fondantes dans un bouillon épicé, piment et poivre du Sichuan.",
+    name: "Bœuf bouilli pimenté",
+    description: "Bœuf fondant dans un bouillon relevé aux piments et épices.",
     price: "15,00 € / 18,80 €",
     tag: "Signature",
-    image: "/plates/boeuf-bouilli-au-piment-et-poivre.jpeg",
+    image: "/menu/Boeuf-bouillie-pimentee.webp",
   },
   {
     id: 2,
-    name: "Canard laqué",
-    description: "Canard rôti à la peau caramélisée et dorée, servi avec sa sauce maison.",
-    price: "16,80 €",
+    name: "Poulet Gong Bao",
+    description: "Poulet sauté aux cacahuètes, piments secs et légumes, sauce légèrement sucrée.",
+    price: "12,50 €",
     tag: "Populaire",
-    image: "/plates/canard-laque.jpeg",
+    image: "/menu/Gongbao-poulet.webp",
   },
   {
     id: 3,
-    name: "Nems au poulet (4 pièces)",
-    description: "Rouleaux croustillants au poulet, légumes et vermicelles, frits à la minute.",
-    price: "5,00 €",
+    name: "Bento saumon",
+    description: "Formule bento : saumon grillé, riz et légumes de saison.",
+    price: "14,50 €",
     tag: "Maison",
-    image: "/first/nems-au-poulet.jpeg",
+    image: "/menu/Bento-saumon.webp",
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const FEATURED = [
     description: "Tofu soyeux en sauce au piment du Sichuan, porc haché et poivre de Sichuan.",
     price: "10,00 €",
     tag: "Épicé",
-    image: "/plates/mapo-tofu.jpeg",
+    image: "/menu/Mapo-dofu.webp",
   },
 ];
 
